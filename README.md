@@ -41,3 +41,10 @@ Disclaimer: This game is not intended for distribution. All rights to Super Mari
 --------------------------------------------------
 <img src="https://nescience.io/wp-content/uploads/2020/05/OmisarioLogo.jpg" width="500" height="640">
 
+--------------------------------------------------
+
+## Contributors:
+
+-- [Julian Traversa](https://github.com/JTraversa)
+
+-- [William Hsieh](https://github.com/whsieh2)
