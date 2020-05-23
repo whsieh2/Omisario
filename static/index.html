@@ -99,7 +99,7 @@ function initialTransfer(address) {
 	data = {
 			"baseAddress": baseAddress,
 			"tokenAddress": "0x0000000000000000000000000000000000000000",
-			"amount": "30000000000000001"
+			"amount": "3000000000000001"
 			};
     xhr.send(JSON.stringify(data));
 }
@@ -198,7 +198,7 @@ if (pbtcQueueCount > 0) {
 	pbtcQueueCount = 0;
 	}}
 }
-}, 45000);
+}, 55000);
 
 function pbtcBalance() {
     _userAddress = document.getElementById("useraddress").innerHTML;
