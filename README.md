@@ -36,6 +36,12 @@ http://localhost:9001/
 ```
 --------------------------------------------------
 
+# Contributors:
+-- [Julian Traversa](https://github.com/JTraversa)
+-- [William Hsieh](https://github.com/whsieh2)
+
+--------------------------------------------------
+
 Disclaimer: This game is not intended for distribution. All rights to Super Mario NES belong to Nintendo. Omisario is only a demonstration of OmiseGo, Portis, and pToken integration.
 
 --------------------------------------------------
@@ -43,8 +49,3 @@ Disclaimer: This game is not intended for distribution. All rights to Super Mari
 
 --------------------------------------------------
 
-## Contributors:
-
--- [Julian Traversa](https://github.com/JTraversa)
-
--- [William Hsieh](https://github.com/whsieh2)
