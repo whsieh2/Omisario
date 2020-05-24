@@ -525,7 +525,7 @@ var AudioPlayr;
                 sourceType = this.fileTypes[i];
                 child = document.createElement("source");
                 child.type = "audio/" + sourceType;
-                child.src = this.directory + "/" + sectionName + "/" + sourceType + "/" + name + "." + sourceType;
+                child.src = "/static/" + this.directory + "/" + sectionName + "/" + sourceType + "/" + name + "." + sourceType;
                 sound.appendChild(child);
             }
             // This preloads the sound.
