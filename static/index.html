@@ -16,7 +16,7 @@
 
 <body>
     <header>
-	      <div class="useraddress" id="useraddress">User Address:  0x-------------------------</div>
+	      <div class="txHashLabel" id="useraddress">User Address:  0x-------------------------</div>
     </header>
 
     <section id="game">
@@ -38,7 +38,7 @@
 	<div class="omgImage" id="omgImage"><img id="omiseImg" src="static/img/omisego.PNG" class="omiseImg" /></div>
 	<div class="txHashLabel" id="txHashLabel"> OmiseGo Network Transaction Hash:</div>
 	<div class="txBlockLabel" id="txBlockLabel"> OmiseGo Network Transaction Block:</div>
-	<a href ="#" id = "txHashLabel" class="txHashLabel" type="button" onclick="linkTransaction()"><div class="txHash" id="txHash">                                                          0x-------------------------</div></a>
+	<a href ="#" id = "txHashLabel" class="txHashLabel" type="button" onclick="linkTransaction()"><div class="txHash" id="txHash">0x-------------------------</div></a>
 	<div class="txBlock" id="txBlock"> 000000</div>
 	</div>
 	
@@ -69,7 +69,7 @@
 var xhr = new XMLHttpRequest();
 var httprequest = new XMLHttpRequest();
 var httprequest2 = new XMLHttpRequest();
-var httprequest3 = new XMLHttpRequest();
+var httprequest4 = new XMLHttpRequest();
 var initialPbtc = 0;
 var coinQueueCount = 0;
 var pbtcQueueCount = 0;
@@ -200,20 +200,20 @@ if (initialPbtc == 0) {
 function pbtcBalance() {
     _userAddress = document.getElementById("useraddress").innerHTML;
     data = {userAddress: _userAddress};
-      xhr.open('POST', '/pbtcBalance', true);
-      xhr.setRequestHeader("Content-type", "application/json");
-      xhr.onreadystatechange = function() {
-          if (xhr.readyState === 4) {
-              if (xhr.status === 200) {
+      httprequest4.open('POST', '/pbtcBalance', true);
+      httprequest4.setRequestHeader("Content-type", "application/json");
+      httprequest4.onreadystatechange = function() {
+          if (httprequest4.readyState === 4) {
+              if (httprequest4.status === 200) {
                   // log(xhr.responseText);
 
-                  let httpResponse = JSON.parse(xhr.responseText);
+                  let httpResponse = JSON.parse(httprequest4.responseText);
 				  document.getElementById('pbtcBalance').innerText = httpResponse.amount; 
                   };
               }
 
       };
-      xhr.send(JSON.stringify(data));
+      httprequest4.send(JSON.stringify(data));
   }
 
 function ethBalance() {
@@ -240,7 +240,7 @@ var ethBalanceInterval = setInterval(function() {
 
 var pbtcBalanceInterval = setInterval(function() {
   pbtcBalance();
-  }, 16000);
+  }, 20000);
 
 function linkTransaction() {
 	txid = document.getElementById('txHash').innerText;
