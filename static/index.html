@@ -251,7 +251,7 @@ function linkTransaction() {
 }
 function linkWallet() {
 	txid = document.getElementById('useraddress').innerText;
-	url = "https://blockexplorer.ropsten.v1.omg.network/transaction/".concat(txid);
+	url = "https://blockexplorer.ropsten.v1.omg.network/address/".concat(txid);
 	window.open(url);
 }	
 ///connect to web3 & get default account address
