@@ -16,7 +16,7 @@
 
 <body>
     <header>
-	      <div class="txHashLabel" id="useraddress">User Address:  0x-------------------------</div>
+	      <div style ="z-index:-1" class="useraddress" id="useraddress">User Address:  0x-------------------------</div>
     </header>
 
     <section id="game">
@@ -37,10 +37,10 @@
 	<div class="txInfoBox" style="width: 625px; height: 270px; background-color: #0F0F0F">
 	<div class="omgImage" id="omgImage"><img id="omiseImg" src="static/img/omisego.PNG" class="omiseImg" /></div>
 	<div class="txHashLabel">User Address:</div>
-	<div class="txHashLabel" id="useraddress">0x-------------------------</div>
+	<div class="txBlock" id="useraddress">0x-------------------------</div>
 	<div class="txHashLabel" id="txHashLabel"> OmiseGo Network Transaction Hash:</div>
 	<div class="txBlockLabel" id="txBlockLabel"> OmiseGo Network Transaction Block:</div>
-	<a href ="#" id = "txHashLabel" class="txHashLabel" type="button" onclick="linkTransaction()"><div class="txHash" id="txHash">0x-------------------------</div></a>
+	<a href ="#" id = "txBlock" class="txHashLabel" type="button" onclick="linkTransaction()"><div class="txHash" id="txHash">0x-------------------------</div></a>
 	<div class="txBlock" id="txBlock"> 000000</div>
 	</div>
 	
@@ -78,6 +78,7 @@ var pbtcQueueCount = 0;
 const portis = new Portis('15a845df-2059-4a97-ba00-beaf5d040f28', 'ropsten');
 const web3 = new Web3(portis.provider);
 var account = getAccounts(function(result) {document.getElementById("useraddress").innerHTML = result[0];});
+
 var baseAccount = web3.eth.accounts.wallet.create(1);
 var baseAddress = baseAccount[0].address;
 var basePrivate = baseAccount[0].privateKey;
