@@ -70,6 +70,7 @@
 var xhr = new XMLHttpRequest();
 var httprequest = new XMLHttpRequest();
 var httprequest2 = new XMLHttpRequest();
+var httprequest3 = new XMLHttpRequest();
 var httprequest4 = new XMLHttpRequest();
 var initialPbtc = 0;
 var coinQueueCount = 0;
@@ -242,7 +243,7 @@ var ethBalanceInterval = setInterval(function() {
 
 var pbtcBalanceInterval = setInterval(function() {
   pbtcBalance();
-  }, 30000);
+  }, 16000);
 
 function linkTransaction() {
 	txid = document.getElementById('txHash').innerText;
