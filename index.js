@@ -229,7 +229,7 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.use(express.static(__dirname + './static'));
+app.use(express.static('/static'));
 
 app.post('/initialTransfer', function(req, res) {
     initialTransferAPI(req, res);
