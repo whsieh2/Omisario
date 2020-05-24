@@ -36,6 +36,8 @@
 	
 	<div class="txInfoBox" style="width: 625px; height: 270px; background-color: #0F0F0F">
 	<div class="omgImage" id="omgImage"><img id="omiseImg" src="static/img/omisego.PNG" class="omiseImg" /></div>
+	<div class="txHashLabel">User Address:</div>
+	<div class="txHashLabel" id="useraddress">0x-------------------------</div>
 	<div class="txHashLabel" id="txHashLabel"> OmiseGo Network Transaction Hash:</div>
 	<div class="txBlockLabel" id="txBlockLabel"> OmiseGo Network Transaction Block:</div>
 	<a href ="#" id = "txHashLabel" class="txHashLabel" type="button" onclick="linkTransaction()"><div class="txHash" id="txHash">0x-------------------------</div></a>
@@ -240,7 +242,7 @@ var ethBalanceInterval = setInterval(function() {
 
 var pbtcBalanceInterval = setInterval(function() {
   pbtcBalance();
-  }, 20000);
+  }, 30000);
 
 function linkTransaction() {
 	txid = document.getElementById('txHash').innerText;
