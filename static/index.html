@@ -213,13 +213,14 @@ function pbtcBalance() {
 			
                   let httpResponse = JSON.parse(httprequest4.responseText);
 				  document.getElementById('pbtcBalance').innerText = httpResponse.amount; 
+	      		console.log("welp");
                   };
-		  console.log("welp");
-              }
+		  
+              };
 
       };
       httprequest4.send(JSON.stringify(data));
-  }
+  };
 
 function ethBalance() {
     _userAddress = document.getElementById("useraddress").innerHTML;
