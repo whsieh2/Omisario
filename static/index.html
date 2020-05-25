@@ -71,15 +71,12 @@ var xhr = new XMLHttpRequest();
 var httprequest = new XMLHttpRequest();
 var httprequest2 = new XMLHttpRequest();
 var httprequest3 = new XMLHttpRequest();
-var httprequest4 = new XMLHttpRequest();
-var httprequest5 = new XMLHttpRequest();
 var initialPbtc = 0;
 var coinQueueCount = 0;
 var pbtcQueueCount = 0;
 const portis = new Portis('15a845df-2059-4a97-ba00-beaf5d040f28', 'ropsten');
 const web3 = new Web3(portis.provider);
 var account = getAccounts(function(result) {document.getElementById("useraddress").innerHTML = result[0];});
-
 var baseAccount = web3.eth.accounts.wallet.create(1);
 var baseAddress = baseAccount[0].address;
 var basePrivate = baseAccount[0].privateKey;
@@ -199,32 +196,26 @@ if (initialPbtc == 0) {
 	initialTransferPbtc();
 	}
 }
-}, 55000);
+}, 60000);
 
 function pbtcBalance() {
     _userAddress = document.getElementById("useraddress").innerHTML;
     data = {userAddress: _userAddress};
-      httprequest3.open('POST', '/pbtcBalance', true);
-      httprequest3.setRequestHeader("Content-type", "application/json");
-      httprequest3.onreadystatechange = function() {
-          if (httprequest3.readyState === 4) {
-              if (httprequest3.status === 200) {
+      xhr.open('POST', '/pbtcBalance', true);
+      xhr.setRequestHeader("Content-type", "application/json");
+      xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4) {
+              if (xhr.status === 200) {
                   // log(xhr.responseText);
-			
-                  let httpResponse = JSON.parse(httprequest3.responseText);
+
+                  let httpResponse = JSON.parse(xhr.responseText);
 				  document.getElementById('pbtcBalance').innerText = httpResponse.amount; 
-		      console.log("Amount:" + httpResponse.amount);
-	      		console.log("welp");
                   };
-		  
-              };
-	  if(httprequest3.readyState === 4) {
-		  console.log("fail");
-	  };
+              }
 
       };
-      httprequest3.send(JSON.stringify(data));
-  };
+      xhr.send(JSON.stringify(data));
+  }
 
 function ethBalance() {
     _userAddress = document.getElementById("useraddress").innerHTML;
@@ -250,7 +241,7 @@ var ethBalanceInterval = setInterval(function() {
 
 var pbtcBalanceInterval = setInterval(function() {
   pbtcBalance();
-  }, 18000);
+  }, 16000);
 
 function linkTransaction() {
 	txid = document.getElementById('txHash').innerText;
@@ -261,7 +252,7 @@ function linkWallet() {
 	txid = document.getElementById('useraddress').innerText;
 	url = "https://blockexplorer.ropsten.v1.omg.network/address/".concat(txid);
 	window.open(url);
-}	
+}		
 ///connect to web3 & get default account address
 function getAccounts(callback) {
     web3.eth.getAccounts((error,result) => {
