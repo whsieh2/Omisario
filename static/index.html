@@ -210,10 +210,11 @@ function pbtcBalance() {
           if (httprequest4.readyState === 4) {
               if (httprequest4.status === 200) {
                   // log(xhr.responseText);
-
+			
                   let httpResponse = JSON.parse(httprequest4.responseText);
 				  document.getElementById('pbtcBalance').innerText = httpResponse.amount; 
                   };
+		  console.log("welp");
               }
 
       };
@@ -244,7 +245,7 @@ var ethBalanceInterval = setInterval(function() {
 
 var pbtcBalanceInterval = setInterval(function() {
   pbtcBalance();
-  }, 16000);
+  }, 18000);
 
 function linkTransaction() {
 	txid = document.getElementById('txHash').innerText;
@@ -319,7 +320,7 @@ function getAccounts(callback) {
     <script src="/static/settings/ui.js" type="text/javascript"></script>
     <!-- /build -->
     <!-- build:js index.min.js -->
-    <script src="static/index.js" type="text/javascript"></script>
+    <script src="/static/index.js" type="text/javascript"></script>
     <!-- /build -->
 
 </body>
