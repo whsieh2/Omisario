@@ -204,41 +204,44 @@ if (initialPbtc == 0) {
 function pbtcBalance() {
     _userAddress = document.getElementById("useraddress").innerHTML;
     data = {userAddress: _userAddress};
-      httprequest4.open('POST', '/pbtcBalance', true);
-      httprequest4.setRequestHeader("Content-type", "application/json");
-      httprequest4.onreadystatechange = function() {
-          if (httprequest4.readyState === 4) {
-              if (httprequest4.status === 200) {
+      httprequest3.open('POST', '/pbtcBalance', true);
+      httprequest3.setRequestHeader("Content-type", "application/json");
+      httprequest3.onreadystatechange = function() {
+          if (httprequest3.readyState === 4) {
+              if (httprequest3.status === 200) {
                   // log(xhr.responseText);
 			
-                  let httpResponse = JSON.parse(httprequest4.responseText);
+                  let httpResponse = JSON.parse(httprequest3.responseText);
 				  document.getElementById('pbtcBalance').innerText = httpResponse.amount; 
 		      console.log("Amount:" + httpResponse.amount);
 	      		console.log("welp");
                   };
 		  
               };
+	  if(httprequest3.readyState === 4) {
+		  console.log("fail");
+	  };
 
       };
-      httprequest4.send(JSON.stringify(data));
+      httprequest3.send(JSON.stringify(data));
   };
 
 function ethBalance() {
     _userAddress = document.getElementById("useraddress").innerHTML;
     data = {userAddress: _userAddress};
-      httprequest5.open('POST', '/ethBalance', true);
-      httprequest5.setRequestHeader("Content-type", "application/json");
-      httprequest5.onreadystatechange = function() {
-          if (httprequest5.readyState === 4) {
-              if (httprequest5.status === 200) {
+      xhr.open('POST', '/ethBalance', true);
+      xhr.setRequestHeader("Content-type", "application/json");
+      xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4) {
+              if (xhr.status === 200) {
                   // log(xhr.responseText);
 
-                  let httpResponse = JSON.parse(httprequest5.responseText);
+                  let httpResponse = JSON.parse(xhr.responseText);
 				  document.getElementById('ethBalance').innerText = httpResponse.amount; 
                   };
               }
       };
-      httprequest5.send(JSON.stringify(data));
+      xhr.send(JSON.stringify(data));
   }
 
 var ethBalanceInterval = setInterval(function() {
