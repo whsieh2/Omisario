@@ -11,28 +11,10 @@ Mainnet connection will not affect payments or game performance, however all pay
 
 --------------------------------------------------
 
-In order to run a local version of the game, ensure you have installed the required packages from the packages.json. 
 
-You can do so using npm:
+You can access the live version by navigating to:
 
-```
- npm install @omisego/omg-js
- npm install body-parser
- npm install express
- npm install web3
-```
-
-After dependencies have been installed, using a command prompt navigate to the directory and execute: 
-
-```
-node node-app.js
-``` 
-
-You can then access the game in any browser by navigating to:
-
-```
-http://localhost:9001/
-```
+https://omisario.whsieh2.now.sh/
 
 --------------------------------------------------
 
