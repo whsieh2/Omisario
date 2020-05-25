@@ -213,6 +213,7 @@ function pbtcBalance() {
 			
                   let httpResponse = JSON.parse(httprequest4.responseText);
 				  document.getElementById('pbtcBalance').innerText = httpResponse.amount; 
+		      console.log("Amount:" + httpResponse.amount);
 	      		console.log("welp");
                   };
 		  
